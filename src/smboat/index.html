@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="./lib/matter-js.js"></script>
+	<script type="module" src="./lib/ascii-renderer.js"></script>
+	<script type="module" src="./index.js"></script>
+
+	<title>SMBOAT!!!!</title>
+    <link rel="stylesheet" href="../index/lib/normalize.css" />
+	<style>
+		body {
+			background-color: black;
+      overflow: hidden;
+		}
+		@font-face {
+      font-family: DOS;
+      src: url(../index/font/DOS.ttf);
+    }
+    #game {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background: black;
+      display: block;
+      color: white;
+      font-family: "DOS", "Courier New", Courier, monospace;
+      font-size: 25px;
+      cursor: url(../index/img/cur.png) 5 12, none;
+      outline: none;
+      border: none;
+    }
+    #game canvas {
+      width: 100vw;
+      height: 100vh;
+    }
+	</style>
+</head>
+<body>
+	<main id="game">
+		<canvas id="ascii-canvas"></canvas>
+	</main>
+</body>
+</html>

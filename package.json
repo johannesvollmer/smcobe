@@ -1,0 +1,36 @@
+{
+  "name": "smc0be",
+  "version": "0.0.1",
+  "description": "SMC0.be",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir ./dist/ & cp -r ./src/** ./dist/",
+    "build-win": "mkdir .\\dist\\ & powershell Copy-Item -Force -Recurse src/* dist",
+    "serve": "live-server --watch=./dist --open=./dist & nodemon --exec='npm run build'",
+    "serve-win": "live-server --watch=.\\dist --open=dist",
+    "watch-win": "powershell Set-ExecutionPolicy RemoteSigned -Scope CurrentUser && nodemon --exec \"npm run build-win\""
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "ext": "js,json,html,css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deflectn/SMC0be.git"
+  },
+  "author": "smc0.be inc.",
+  "bugs": {
+    "url": "https://github.com/deflectn/SMC0be/issues"
+  },
+  "homepage": "https://github.com/deflectn/SMC0be#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0",
+    "nodemon": "^2.0.19"
+  }
+}
