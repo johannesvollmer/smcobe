@@ -1,6 +1,6 @@
 import getCaretCoordinates from "./position.js";
 
-import { generatePain } from "./api.js";
+import { generatePain } from "./API.js";
 document.querySelecto = document.querySelector.bind(document);
 const get1 = document.querySelecto.bind(document);
 const getn = document.querySelectorAll.bind(document);
