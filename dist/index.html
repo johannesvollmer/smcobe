@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>smc0be</title>
+    <link rel="stylesheet" href="index/lib/normalize.css" />
+    <style>
+      @font-face {
+        font-family: DOS;
+        src: url(index/font/DOS.ttf);
+      }
+      body {
+        font-size: 25px;
+        line-height: 1em;
+        overflow: hidden;
+      }
+      #console {
+        --line-height: 100px;
+        line-height: var(--line-height);
+        height: 100vh;
+        padding: 0;
+        /* padding-bottom: var(--line-height); */
+        box-sizing: border-box;
+        width: 100vw;
+        display: block;
+        color: white;
+        background: black;
+        font-family: "DOS", "Courier New", Courier, monospace;
+        cursor: url(index/img/cur.png) 5 12, none;
+        /* white-space: pre; */
+        overflow-y: hidden;
+        overflow-x: hidden;
+        word-wrap: break-word;
+        outline: none;
+        border: none;
+        caret-color: transparent;
+        user-select: none;
+      }
+      #console.error {
+        color: red;
+        
+        animation-name: blink3;
+        animation-duration: 0.1s;
+        animation-timing-function: step-end;
+        animation-iteration-count: 20;
+        animation-direction: alternate;
+      }
+      #console::selection {
+        background: #fff;
+        color: #000;
+        animation-name: blink2;
+        animation-duration: 0.2s;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      .carret {
+        /* transform: translate(-0.2em, 0px) scale(0.8, 1.1); */
+        mix-blend-mode: difference;
+        background-color: white;
+        height: 1em;
+        width: 0.8rem;
+        animation-name: blink;
+        animation-duration: 0.2s;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes blink2 {
+        0% {
+          background: #fff;
+          color: #000;
+        }
+        50% {
+          background: #000;
+          color: #fff;
+        }
+        100% {
+          background: #fff;
+          color: #000;
+        }
+      }
+      @keyframes blink3 {
+        0% {
+          color: red;
+        }
+        50% {
+          color: black;
+        }
+        100% {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="console" spellcheck="false"></textarea>
+
+    <script src="./index/lib/console.js" type="module"></script>
+  </body>
+</html>
